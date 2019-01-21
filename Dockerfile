@@ -21,15 +21,16 @@ ARG WORKSPACE_DIR="/workspace"
 ENV NPM_CONFIG_LOGLEVEL info
 ENV HOME "$USER_HOME_DIR"
 
-RUN set -xe \
-    && env \ 
-    &&  (cd "$USER_HOME_DIR"; su node -c "npm install -g vuepress@${VUEPRESS_VERSION}; npm cache clean --force")
+WORKDIR ${USER_HOME_DIR}
 
+RUN set -xe \
+    && npm install -g  vuepress@${VUEPRESS_VERSION} \
+    && npm cache clean --force
 
 # not declared to avoid anonymous volume leak
 # VOLUME "$USER_HOME_DIR/.cache/yarn"
 # VOLUME "$APP_DIR/"
-#WORKDIR $WORKSPACE_DIR
+WORKDIR $WORKSPACE_DIR
 
 EXPOSE 8080
  

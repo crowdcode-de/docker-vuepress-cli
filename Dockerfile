@@ -12,7 +12,7 @@ FROM crowdcode/vue-cli:latest
 LABEL maintainer="development@crowdcode.io" \
       description="Simple vuepress docker container"
 
-ARG VUEPRESS_VERSION=next 
+ARG VUEPRESS_VERSION=0.14.8
 ENV VUEPRESS_VERSION ${VUEPRESS_VERSION}
 ARG USER_ID=1000
 ARG USER_HOME_DIR="/build"

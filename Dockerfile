@@ -23,7 +23,7 @@ ENV HOME "$USER_HOME_DIR"
 
 RUN set -xe \
     && env \ 
-    &&  (cd "$USER_HOME_DIR"; su node -c "npm install -g vuepress@${VUEPRESS_VERSION}; npm install -g yarn; chmod +x /usr/local/bin/yarn; npm cache clean --force")
+    &&  (cd "$USER_HOME_DIR"; su node -c "npm install -g vuepress@${VUEPRESS_VERSION}; npm cache clean --force")
 
 
 # not declared to avoid anonymous volume leak

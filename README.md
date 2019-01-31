@@ -19,10 +19,11 @@ echo '# Hello VuePress' > README.md
 Start vuepress development server:
 
 ```
-docker run -it --rm -p 8080:8080 -v "$PWD":/workspace crowdcode/vuepress vuepress dev
+docker run -it --rm -p 8080:8080 -p 8081:8081 -v "$PWD":/workspace crowdcode/vuepress vuepress dev
 ```
 
-Start writing your content and have a look on [http://localhost:8080](http://localhost:8080)
+Start writing your content and have a look on [http://localhost:8080](http://localhost:8080). The Port 8081 is used for hot reload after you changed a file.
+
 
 Build to static files with:
 
